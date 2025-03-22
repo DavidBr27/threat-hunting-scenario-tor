@@ -25,20 +25,23 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 ### 1. Searched the `DeviceFileEvents` Table
 
-Searched for any file that had the string "tor" in it and discovered what looks like the user "employee" downloaded a TOR installer, did something that resulted in many TOR-related files being copied to the desktop, and the creation of a file called `tor-shopping-list.txt` on the desktop at `2024-11-08T22:27:19.7259964Z`. These events began at `2024-11-08T22:14:48.6065231Z`.
+Searched for any file that had the string "tor" in it and discovered what looks like the user "davidcyberrange" downloaded a TOR installer, did something that resulted in many TOR-related files being copied to the desktop, and the creation of a file called `tor-shopping-list.txt` on the desktop at `2025-03-21T05:24:05.2143324Z`. These events began at `2025-03-21T04:49:52.1710233Z`.
 
 **Query used to locate events:**
 
 ```kql
-DeviceFileEvents  
-| where DeviceName == "threat-hunt-lab"  
-| where InitiatingProcessAccountName == "employee"  
-| where FileName contains "tor"  
-| where Timestamp >= datetime(2024-11-08T22:14:48.6065231Z)  
-| order by Timestamp desc  
-| project Timestamp, DeviceName, ActionType, FileName, FolderPath, SHA256, Account = InitiatingProcessAccountName
+DeviceFileEvents 
+| where DeviceName == "test-vm-david" 
+| where FileName contains "tor" 
+| where InitiatingProcessAccountName == "davidcyberrange" 
+| where TimeGenerated >= todatetime('2025-03-21T04:49:52.1710233Z') 
+| order by TimeGenerated desc 
+| project TimeGenerated, DeviceName, ActionType, FileName, FolderPath, SHA256, Account = 
+InitiatingProcessAccountName 
 ```
-<img width="1212" alt="image" src="https://github.com/user-attachments/assets/71402e84-8767-44f8-908c-1805be31122d">
+
+<img width="1212" alt="image" src="![firstquery](https://github.com/user-attachments/assets/1a0f9813-90fb-4b7a-8d55-4dcbf2fe0b6c)
+">
 
 ---
 
