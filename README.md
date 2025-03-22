@@ -25,7 +25,7 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 ### 1. Searched the `DeviceFileEvents` Table
 
-Searched for any file that had the string "tor" in it and discovered what looks like the user "davidcyberrange" downloaded a TOR installer, did something that resulted in many TOR-related files being copied to the desktop, and the creation of a file called `tor-shopping-list.txt` on the desktop at `2025-03-21T05:24:05.2143324Z`. These events began at `2025-03-21T04:49:52.1710233Z`.
+Searched for any file that had the string "tor" in it and discovered what looks like the user "davidcyberrange" downloaded a TOR installer, did something that resulted in many TOR-related files being copied to the desktop, and the creation of a file called `tor-shopping-list.txt` on the desktop at `2025-03-21T04:49:52Z`. These events began at `2025-03-21T04:49:52.1710233Z`.
 
 **Query used to locate events:**
 
